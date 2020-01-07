@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+    integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/catinfostyles.css">
+  <title>Cats Dashboard</title>
+</head>
+
+<body>
+  <h1 class="text-center mt-3 mb-3"><%= cat.name %> </h1>
+  <img class="text-center" src='<%= cat.img_link %>' alt='<%= cat.name %>'>
+  <p class="text-center"> Age: <%= cat.age %> </p>
+  <p class="text-center"> Color: <%= cat.color %> </p>
+  <p class="text-center"> Favorite Food: <%= cat.favorite_food %> </p>
+
+  <a href="/cats/edit/<%= cat._id %>"class="btn btn-dark">Edit this cat</a>
+  <a href="/cats/new" class="btn btn-primary">Add a new cat</a>
+  <a href="/" class="btn btn-secondary">Go back</a>
+
+  <form action="/cats/destroy/<%= cat._id %>" method="post">
+  <br>
+  <button class="btn btn-danger" type="submit">Remove Cat</button>
+  </form>
+</body>
+
+</html>
